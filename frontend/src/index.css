@@ -1,0 +1,170 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: inherit;
+  font-size: 16px;
+}
+
+/* Home */
+.home-header {
+  background-color: red;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-account {
+  background-color: red;
+}
+
+.connected-container {
+  padding: 3rem 0;
+  background-color: green;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.connected-container__avatar {
+  background-color: greenyellow;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  border: 3px solid #000000;
+}
+
+.connected-container__buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.connected-container__button {
+  width: 80%;
+  padding: 1rem 0;
+  border: 3px solid #000000;
+  border-radius: 1rem;
+
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.connected-container__button:hover {
+  opacity: 0.8;
+}
+
+.disconnected-container {
+  padding: 3rem 0;
+  background-color: green;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.disconnected-container__avatar {
+  background-color: red;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  border: 3px solid #000000;
+}
+
+.disconnected-container__buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.disconnected-container__button {
+  width: 80%;
+  padding: 1rem 0;
+  border: 3px solid #000000;
+  border-radius: 1rem;
+
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.disconnected-container__button:hover {
+  opacity: 0.8;
+}
+
+/* Forms */
+.title {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+form div {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+form div label {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+form div input {
+  padding: 8px 4px;
+  font-size: 1.2rem;
+  border: 2px solid #000000;
+  border-radius: 4px;
+}
+
+form input[type="submit"] {
+  width: 80%;
+  padding: 8px 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.form-response {
+  display: none;
+  color: #FFFFFF;
+  background-color: rgb(205, 0, 0);
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 1rem;
+  padding: 8px 4px;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.form-response-visible {
+  display: block;
+}
