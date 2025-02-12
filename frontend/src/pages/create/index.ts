@@ -27,7 +27,15 @@ class CreatePage extends HTMLElement {
           <input class="create__submit" id="form-submit" type="submit" value="Crear sala" />
         </form>
 
-        <p class="form-response" id="form-response"></p>
+        <p class="room-information" id="room-information">
+          <h2 class="room-information__title">Información de la sala</h2>
+          
+          <div>
+            <span>Código</span>
+            <h3>123456</h3>
+            <a href="http://localhost:3001/room/123456">Ir a la sala</a>
+          </div>
+        </p>
       </main>
 
     `;
