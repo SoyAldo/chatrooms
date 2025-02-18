@@ -8,13 +8,14 @@ class HeaderGeneric extends HTMLElement {
     const style = document.createElement("style");
     style.textContent = `
     header {
-      background-color: red;
+      background-color: blueviolet;
       height: 4rem;
       display: flex;
       justify-content: center;
       align-items: center;
     }
     h1 {
+      color: #FFFFFF;
       font-size: 2rem;
     }
     `;

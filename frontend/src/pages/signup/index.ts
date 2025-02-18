@@ -14,25 +14,25 @@ class SignupPage extends HTMLElement {
     this.innerHTML = `
     <header-generic></header-generic>
     <main>
-      <h2 class="title">Registro</h2>
+      <h2 class="title">Registrandote...</h2>
       
-      <form class="signup" id="signup-form">
-        <div class="signup-field">
-          <label class="signup-field__label" for="name">Nombre</label>
-          <input class="signup-field__input" type="text" name="name" id="name" required placeholder="Ingrese su nombre" />
+      <form class="form" id="signup-form">
+        <div>
+          <label for="name">Nombre</label>
+          <input type="text" name="name" id="name" required placeholder="John Due" />
         </div>
 
-        <div class="signup-field">
-          <label class="signup-field__label" for"email">Email</label>
-          <input class="signup-field__input" type="email" name="email" id="email" required placeholder="Ingrese su email" />
+        <div>
+          <label for"email">Correo electronico</label>
+          <input type="email" name="email" id="email" required placeholder="JohnDue@gmail.com" />
         </div>
 
-        <div class="signup-field">
-          <label class="signup-field__label" for"password">Contraseña</label>
-          <input class="signup-field__input" type="password" name="password" id="password" required title="password" />
+        <div>
+          <label for"password">Contraseña</label>
+          <input type="password" name="password" id="password" required  placeholder="********"/>
         </div>
 
-        <input class="signup__submit" id="form-submit" type="submit" value="Registrarse" />
+        <input id="form-submit" type="submit" value="Registrarse" />
       </form>
 
       <p class="form-response" id="form-response"></p>

@@ -14,20 +14,20 @@ class SigninPage extends HTMLElement {
     this.innerHTML = `
     <header-generic></header-generic>
     <main>
-      <h2 class="title">Iniciar sesión</h2>
+      <h2 class="title">Iniciando sesión...</h2>
       
-      <form class="signin" id="signin-form">
-        <div class="signin-field">
-          <label class="signin-field__label" for"email">Email</label>
-          <input class="signin-field__input" type="email" name="email" id="email" required placeholder="Ingrese su email" />
+      <form class="form" id="signin-form">
+        <div>
+          <label for"email">Correo electronico</label>
+          <input type="email" name="email" id="email" required placeholder="johndue@gmail.com" />
         </div>
 
-        <div class="signin-field">
-          <label class="signin-field__label" for"password">Contraseña</label>
-          <input class="signin-field__input" type="password" name="password" id="password" required title="password" />
+        <div>
+          <label for"password">Contraseña</label>
+          <input type="password" name="password" id="password" required placeholder="********" />
         </div>
 
-        <input class="signin__submit" id="form-submit" type="submit" value="Iniciar sesión" />
+        <input id="form-submit" type="submit" value="Iniciar sesión" />
       </form>
 
       <p class="form-response" id="form-response"></p>

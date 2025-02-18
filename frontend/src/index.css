@@ -115,6 +115,7 @@ html {
   text-align: center;
 }
 
+/*
 form {
   display: flex;
   flex-direction: column;
@@ -151,9 +152,11 @@ form input[type="submit"] {
   letter-spacing: 2px;
 }
 
+*/
+
 .form-response {
   display: none;
-  color: #FFFFFF;
+  color: #ffffff;
   background-color: rgb(205, 0, 0);
   width: 90%;
   margin: 0 auto;
@@ -167,4 +170,136 @@ form input[type="submit"] {
 
 .form-response-visible {
   display: block;
+}
+
+/* Result Information */
+
+.info-square {
+  margin: 1rem;
+  padding: 1rem 0;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  display: none;
+}
+
+.info-square-visible {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.info-square__title {
+  width: 90%;
+  text-align: center;
+  border-bottom: 2px solid #000000;
+}
+
+.info-square__field {
+  padding: 0.3rem 0;
+  border: 2px solid #000000;
+  border-radius: 5px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.info-square__field-title {
+  width: 90%;
+  border-bottom: 2px solid #000000;
+  text-align: center;
+}
+
+.info-square__field-text {
+  margin: 0 2rem;
+  padding: 0.3rem 1rem;
+  color: #ffffff;
+  background-color: blueviolet;
+  letter-spacing: 5px;
+  text-align: center;
+}
+
+.info-square__link {
+  padding: 0.3rem 2rem;
+  color: #ffffff;
+  background-color: blueviolet;
+  text-decoration: none;
+}
+
+/* Formularios */
+
+.form {
+  width: 90%;
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  background-color: blueviolet;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.form div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.form div label {
+  color: #FFFFFF;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.form div input {
+  width: 100%;
+  height: 2rem;
+  background-color: #FFFFFF;
+  color: #8a2be2;
+  border: none;
+  padding: 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+}
+
+.form div input:focus {
+  outline: none;
+  background-color: #be79ff;
+  color: #FFFFFF;
+}
+
+.form div input::placeholder {
+  color: #b96eff;
+}
+
+.form div input:focus::placeholder {
+  color: #FFFFFF;
+}
+
+.form input[type="submit"] {
+  height: 2rem;
+  padding: 0 2rem;
+  background-color: #FFFFFF;
+  border: none;
+  color: #8a2be2;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition-property: background-color color;
+  transition-duration: 0.3s;
+}
+
+.form input[type="submit"]:hover {
+  background-color: #be79ff;
+  color: #FFFFFF;
 }

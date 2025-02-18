@@ -1,6 +1,8 @@
+import { registerAlertToast } from "./components/alert-toast";
 import { registerHeaderGeneric } from "./components/header-generic";
 import { registerCreatePage } from "./pages/create";
 import { registerHomePage } from "./pages/home";
+import { registerJoinPage } from "./pages/join";
 import { registerSigninPage } from "./pages/signin";
 import { registerSignupPage } from "./pages/signup";
 import { initState } from "./state";
@@ -13,12 +15,14 @@ function main() {
 
   // Registramos los componentes
   registerHeaderGeneric();
+  registerAlertToast();
 
   // Registramos las páginas
   registerHomePage();
   registerSignupPage();
   registerSigninPage();
   registerCreatePage();
+  registerJoinPage();
 
   // Inicializar el router
   const root = document.getElementById("root");
@@ -30,7 +34,8 @@ function main() {
     { path: "/signup", component: "signup-page" },
     { path: "/signin", component: "signin-page" },
     { path: "/create", component: "create-page" },
-    { path: "/chatroom/:roomId", component: "chatroom-view" },
+    { path: "/join", component: "join-page" },
+    { path: "/room/:roomId", component: "room-page" },
   ]);
 }
 

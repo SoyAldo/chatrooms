@@ -18,51 +18,73 @@ class CreatePage extends HTMLElement {
       <main>
         <h2 class="title">Creando sala</h2>
 
-        <form class="create" id="create-form">
-          <div class="create-field">
-            <label class="create-field__label" for"name">Nombre</label>
-            <input class="create-field__input" type="text" name="name" id="name" required placeholder="Ingrese un nombre" />
+        <form class="form" id="create-form">
+          <div>
+            <label for"name">Nombre</label>
+            <input type="text" name="name" id="name" required placeholder="Un nombre de sala asombroso" />
           </div>
 
-          <input class="create__submit" id="form-submit" type="submit" value="Crear sala" />
+          <input id="form-submit" type="submit" value="Crear sala" />
         </form>
 
-        <p class="room-information" id="room-information">
-          <h2 class="room-information__title">Información de la sala</h2>
-          
-          <div>
-            <span>Código</span>
-            <h3>123456</h3>
-            <a href="http://localhost:3001/room/123456">Ir a la sala</a>
-          </div>
-        </p>
+        <div class="info-square"></div>
       </main>
-
     `;
 
     const form = this.querySelector("#create-form") as HTMLFormElement;
-
-    form?.addEventListener("submit", (event) => {
-      event.preventDefault();
-      // Obtener el nombre de la sala
-      const formData = new FormData(form);
-      const name = formData.get("name");
-      // Si el nombre de la sala es válido
-      if (name) {
-        fetch("http://localhost:3000/chatroom", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ userId: user?.id }),
-        }).then((res) => {
-          res.json().then((data) => {
-            console.log(res.ok);
-            console.log(data);
+    if (form) {
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        // Obtener el nombre de la sala
+        const formData = new FormData(form);
+        const name = formData.get("name");
+        // Si el nombre de la sala es válido
+        if (name) {
+          fetch("http://localhost:3000/chatroom", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ userId: user?.id }),
+          }).then((res) => {
+            res.json().then((data) => {
+              console.log(res.ok);
+              console.log(data);
+              const infoSquare = this.querySelector(".info-square");
+              if (infoSquare) {
+                placeInfo(infoSquare as HTMLDivElement, data.roomId);
+              }
+              // Eliminando el formulario del dom
+              form.remove();
+            });
           });
-        });
-        // Crear la sala
-        // Si la sala fue creada mostrar la información y el botón para ir a la sala
-      }
-    });
+        }
+      });
+    }
+  }
+}
+
+function placeInfo(infoSquare: HTMLDivElement, code: string) {
+  infoSquare.className = "info-square info-square-visible";
+  infoSquare.innerHTML = `
+    <h2 class="info-square__title">Información de la sala</h2>
+
+    <div class="info-square__field">
+      <h3 class="info-square__field-title">Código</h3>
+      <p class="info-square__field-text"></p>
+    </div>
+
+    <p class="info-square__text">Comparte el código con tus amigos</p>
+
+    <a class="info-square__link">Ir a la sala</a>
+  `;
+  // Coloco el código en la información
+  const codeTextEl = infoSquare.querySelector(".info-square__field-text");
+  if (codeTextEl) {
+    codeTextEl.textContent = code;
+  }
+  // Coloco el enlace en el botón
+  const buttonEl = infoSquare.querySelector(".info-square__link");
+  if (buttonEl) {
+    buttonEl.setAttribute("href", "http://localhost:3001/room/" + code);
   }
 }
 
